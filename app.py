@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import Flask, request, render_template, jsonify
 from passwordCheck import passwordCheck
+from openDoor import openDoor;
 
 app = Flask(__name__)
 guess = ""
@@ -13,7 +14,7 @@ def gfg():
        inputFromTextBox = request.form.get("textBox")
        guess = inputFromTextBox
        if passwordCheck(guess):
-         return "here"
+         openDoor()
        
     
        
